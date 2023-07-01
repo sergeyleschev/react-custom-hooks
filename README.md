@@ -1,6 +1,10 @@
 
 # React Custom Hooks
 
+React Hooks are a feature introduced in React version 16.8 that revolutionized the way developers write and manage stateful logic in functional components. Previously, stateful logic could only be implemented in class components using lifecycle methods. However, with React Hooks, developers can now utilize state and other React features directly in functional components. Hooks provide a way to easily reuse stateful logic across multiple components, improving code reusability and reducing complexity. They enable developers to break down complex components into smaller, more manageable pieces, resulting in cleaner and more maintainable code. Hooks, such as useState and useEffect, allow developers to manage component state and handle side effects effortlessly. With their simplicity and flexibility, React Hooks have become an essential tool for building modern, efficient, and scalable React applications.
+
+React custom hooks are reusable functions that allow developers to abstract and encapsulate complex logic in a reusable manner. Custom hooks are created by combining existing React hooks or other custom hooks. They enable developers to extract common logic from components and share it across different parts of an application. Custom hooks follow a naming convention of using the "use" prefix, which allows them to leverage the benefits of React's rules of hooks. By creating custom hooks, developers can modularize and organize their code, making it more readable, maintainable, and testable. These hooks can encapsulate any kind of logic, such as API calls, form handling, state management, or even abstracting external libraries. React custom hooks are a powerful tool that promotes code reusability and reduces duplication, making development more efficient and scalable.
+
 React Custom Hooks @ S. Leschev. Google Engineering Level: L6+
 
 - [`useArray`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useArray/useArray.js)
