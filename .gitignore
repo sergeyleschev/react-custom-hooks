@@ -1,0 +1,36 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output
+build/
+dist/
+
+# Ignore environment files
+**/.env*
+
+# Ignore editor-specific files
+.vscode/
+*.swp
+*.swo
+
+# Ignore logs and other generated files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore test coverage output
+coverage/
+
+# Ignore IDE specific files
+.idea/*
+*.iml
+*.ipr
+*.iws
+
+# Ignore Mac specific files
+.DS_Store
+
+# Ignore Windows specific files
+Thumbs.db
