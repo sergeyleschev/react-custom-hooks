@@ -358,7 +358,7 @@ export default function useDarkMode() {
 }
 ```
 
-This custom hook combines two other handy hooks, "useMediaQuery" and "useLocalStorage," to provide a seamless dark mode experience. It automatically detects the user's preferred color scheme and persists the dark mode state in the browser's local storage.
+This custom hook combines two other handy hooks, [`useMediaQuery`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useMediaQuery/useMediaQuery.js) and [`useStorage`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStorage/useStorage.js), to provide a seamless dark mode experience. It automatically detects the user's preferred color scheme and persists the dark mode state in the browser's local storage.
 
 One of the main advantages of "useDarkMode" is its simplicity. With just a few lines of code, you can enable dark mode in your React application. By invoking this hook, you'll receive the current dark mode state and a function to toggle it.
 
@@ -1369,6 +1369,16 @@ function useStorage(key, defaultValue, storageObject) {
     return [value, setValue, remove]
 }
 ```
+
+The useStorage hook provides two convenient functions: useLocalStorage and useSessionStorage. With useLocalStorage, you can effortlessly store and retrieve data in the browser's local storage, while useSessionStorage offers the same functionality but with the session storage instead.
+
+One of the key advantages of this custom hook is its simplicity. You can use it to store any type of data, such as strings, numbers, or even complex objects, with just a few lines of code. Additionally, useStorage handles the serialization and deserialization of data for you, so you don't have to worry about converting values to and from JSON.
+
+Another advantage is the automatic synchronization between the stored data and the component's state. Whenever the stored data changes, the hook updates the component's state accordingly. Similarly, when the component's state changes, the hook automatically persists the new value to the storage. This bidirectional synchronization ensures that your application always reflects the latest data, making it ideal for scenarios where real-time updates are crucial.
+
+The useStorage hook also provides a remove function, allowing you to easily delete stored values when they are no longer needed. This functionality comes in handy when implementing features like logout buttons or clearing user-specific data.
+
+You can use the useStorage hook in a variety of scenarios. For example, imagine you have a settings panel where users can customize their preferences. By using useLocalStorage, you can easily store and retrieve these settings, ensuring that they persist across page reloads or even if the user closes and reopens the browser.
 
 ```javascript
 import { useSessionStorage, useLocalStorage } from "./useStorage"
