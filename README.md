@@ -10,39 +10,49 @@ React custom hooks are reusable functions that allow developers to abstract and 
 
 React Custom Hooks @ 2023, S. Leschev. Google Engineering Level: L6+
 
-- [`useArray`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useArray/useArray.js)
-- [`useAsync`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useAsync/useAsync.js)
-- [`useClickOutside`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useClickOutside/useClickOutside.js)
-- [`useCookie`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCookie/useCookie.js)
-- [`useCopyToClipboard`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCopyToClipboard/useCopyToClipboard.js)
-- [`useDarkMode`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDarkMode/useDarkMode.js)
-- [`useDebounce`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebounce/useDebounce.js)
-- [`useDebugInformation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebugInformation/useDebugInformation.js)
-- [`useDeepCompareEffect`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDeepCompareEffect/useDeepCompareEffect.js)
-- [`useEffectOnce`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEffectOnce/useEffectOnce.js)
-- [`useEventListener`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEventListener/useEventListener.js)
-- [`useFetch`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useFetch/useFetch.js)
-- [`useGeolocation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useGeolocation/useGeolocation.js)
-- [`useHover`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useHover/useHover.js)
-- [`useLongPress`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useLongPress.js/useLongPress.js)
-- [`useMediaQuery`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useMediaQuery/useMediaQuery.js)
-- [`useOnlineStatus`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnlineStatus/useOnlineStatus.js)
-- [`useOnScreen`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnScreen/useOnScreen.js)
-- [`usePrevious`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/usePrevious/usePrevious.js)
-- [`useRenderCount`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useRenderCount/useRenderCount.js)
-- [`useScript`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useScript/useScript.js)
-- [`useStateWithHistory`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithHistory/useStateWithHistory.js)
-- [`useStateWithValidation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithValidation/useStateWithValidation.js)
-- [`useStorage`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStorage/useStorage.js)
-- [`useTimeout`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTimeout/useTimeout.js)
-- [`useToggle`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useToggle/useToggle.js)
-- [`useTranslation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTranslation/useTranslation.js)
-- [`useUpdateEffect`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useUpdateEffect/useUpdateEffect.js)
-- [`useWindowSize`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useWindowSize/useWindowSize.js)
+# Table of Contents
+- [S.Leschev: React Custom Hooks](#sleschev-react-custom-hooks)
+  - [1. `useArray`](#1-usearray)
+  - [2. `useAsync`](#2-useasync)
+  - [3. `useClickOutside`](#3-useclickoutside)
+  - [4. `useCookie`](#4-usecookie)
+  - [5. `useCopyToClipboard`](#5-usecopytoclipboard)
+  - [6. `useDarkMode`](#6-usedarkmode)
+  - [7. `useDebounce`](#7-usedebounce)
+  - [8. `useDebugInformation`](#8-usedebuginformation)
+  - [9. `useDeepCompareEffect`](#9-usedeepcompareeffect)
+  - [10. `useEffectOnce`](#10-useeffectonce)
+  - [11. `useEventListener`](#11-useeventlistener)
+  - [12. `useFetch`](#12-usefetch)
+  - [13. `useGeolocation`](#13-usegeolocation)
+  - [14. `useHover`](#14-usehover)
+  - [15. `useLongPress`](#15-uselongpress)
+  - [16. `useMediaQuery`](#16-usemediaquery)
+  - [17. `useOnlineStatus`](#17-useonlinestatus)
+  - [18. `useOnScreen`](#18-useonscreen)
+  - [19. `usePrevious`](#19-useprevious)
+  - [20. `useRenderCount`](#20-userendercount)
+  - [21. `useScript`](#21-usescript)
+  - [22. `useStateWithHistory`](#22-usestatewithhistory)
+  - [23. `useStateWithValidation`](#23-usestatewithvalidation)
+  - [24. `useStorage`](#24-usestorage)
+  - [25. `useTimeout`](#25-usetimeout)
+  - [26. `useToggle`](#26-usetoggle)
+  - [27. `useTranslation`](#27-usetranslation)
+  - [28. `useUpdateEffect`](#28-useupdateeffect)
+  - [29. `useWindowSize`](#29-usewindowsize)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run eject`](#npm-run-eject)
+- [🏆 Awards](#-awards)
+    - [Ranking #Dev: Global TOP 200 (Certificate)](#ranking-dev-global-top-200-certificate)
+  - [Contacts](#contacts)
 
 <br />
 
-## 1. [`useArray`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useArray/useArray.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useArray/useArray.js)
+## 1. [`useArray`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useArray/useArray.js)
 
 ```javascript
 import { useState } from "react"
@@ -77,6 +87,8 @@ export default function useArray(defaultValue) {
     return { array, set: setArray, push, filter, update, remove, clear }
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useArray hook utilizes the useState hook from React to initialize and manage the array state. It returns an object with the following functions:
 
@@ -114,7 +126,7 @@ export default function ArrayComponent() {
 
 <br />
 
-## 2. [`useAsync`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useAsync/useAsync.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useAsync/useAsync.js)
+## 2. [`useAsync`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useAsync/useAsync.js)
 
 ```javascript
 import { useCallback, useEffect, useState } from "react"
@@ -141,6 +153,8 @@ export default function useAsync(callback, dependencies = []) {
     return { loading, error, value }
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useAsync hook takes in a callback function that performs the asynchronous operation and an optional array of dependencies. It returns an object with three properties: loading, error, and value. The loading property indicates whether the operation is currently in progress, while the error property holds any error messages encountered during the process. Finally, the value property contains the resolved value of the asynchronous operation.
 
@@ -174,7 +188,7 @@ export default function AsyncComponent() {
 ```
 <br />
 
-## 3. [`useClickOutside`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useClickOutside/useClickOutside.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useClickOutside/useClickOutside.js)
+## 3. [`useClickOutside`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useClickOutside/useClickOutside.js)
 
 ```javascript
 import useEventListener from "../useEventListener/useEventListener"
@@ -186,6 +200,8 @@ export default function useClickOutside(ref, cb) {
     }, document)
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useClickOutside hook is designed to simplify the process of detecting clicks outside a specified component. By utilizing the useEventListener hook, it listens for click events on the document level, allowing you to trigger a callback function when a click occurs outside the provided component's reference.
 
@@ -232,7 +248,7 @@ export default function ClickOutsideComponent() {
 
 <br />
 
-## 4. [`useCookie`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCookie/useCookie.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCookie/useCookie.js) 
+## 4. [`useCookie`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCookie/useCookie.js)
 
 ```javascript
 import { useState, useCallback } from "react"
@@ -263,6 +279,8 @@ export default function useCookie(name, defaultValue) {
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 The useCookie hook allows you to effortlessly handle cookies by providing a concise interface. Upon initialization, useCookie retrieves the cookie value with the specified name. If the cookie exists, it returns its value; otherwise, it sets the cookie to the default value provided. This ensures a seamless experience for your users, as the desired data is readily available.
 
 One of the key advantages of this custom hook is the ability to update the cookie value. The updateCookie function, returned by useCookie, enables you to modify the value of the cookie. By invoking this function with a new value and optional options, such as expiration or path, you can instantly update the cookie. Additionally, the hook conveniently updates the state, keeping your application in sync with the modified cookie.
@@ -289,7 +307,7 @@ export default function CookieComponent() {
 
 <br />
 
-## 5. [`useCopyToClipboard`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCopyToClipboard/useCopyToClipboard.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCopyToClipboard/useCopyToClipboard.js)
+## 5. [`useCopyToClipboard`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useCopyToClipboard/useCopyToClipboard.js)
 
 ```javascript
 import { useState } from "react"
@@ -308,6 +326,8 @@ export default function useCopyToClipboard() {
     return [copyToClipboard, { value, success }]
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 Copying text to the clipboard in a React application can be a tedious task. To simplify this process, I've created a powerful custom hook called useCopyToClipboard. With just a few lines of code, this hook streamlines the copy-to-clipboard functionality, providing developers with a hassle-free solution.
 
@@ -338,7 +358,7 @@ export default function CopyToClipboardComponent() {
 
 <br />
 
-## 6. [`useDarkMode`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDarkMode/useDarkMode.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDarkMode/useDarkMode.js)
+## 6. [`useDarkMode`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDarkMode/useDarkMode.js)
 
 ```javascript
 import { useEffect } from "react"
@@ -357,6 +377,8 @@ export default function useDarkMode() {
     return [enabled, setDarkMode]
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 This custom hook combines two other handy hooks, [`useMediaQuery`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useMediaQuery/useMediaQuery.js) and [`useStorage`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStorage/useStorage.js), to provide a seamless dark mode experience. It automatically detects the user's preferred color scheme and persists the dark mode state in the browser's local storage.
 
@@ -398,7 +420,7 @@ export default function DarkModeComponent() {
 
 <br />
 
-## 7. [`useDebounce`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebounce/useDebounce.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebounce/useDebounce.js)
+## 7. [`useDebounce`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebounce/useDebounce.js)
 
 ```javascript
 import { useEffect } from "react"
@@ -410,6 +432,8 @@ export default function useDebounce(callback, delay, dependencies) {
     useEffect(clear, [])
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useDebounce hook leverages the useTimeout hook internally to delay the execution of a callback function until a specified delay has passed. By doing so, it prevents frequent updates caused by rapid input changes or repeated events, allowing for smoother interactions and reduced resource consumption.
 
@@ -438,7 +462,7 @@ export default function DebounceComponent() {
 
 <br />
 
-## 8. [`useDebugInformation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebugInformation/useDebugInformation.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebugInformation/useDebugInformation.js)
+## 8. [`useDebugInformation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDebugInformation/useDebugInformation.js)
 
 ```javascript
 import { useEffect, useRef } from "react"
@@ -474,6 +498,8 @@ export default function useDebugInformation(componentName, props) {
     return info
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 When it comes to debugging React components, having access to detailed information about renders and prop changes can be incredibly useful. That's where the useDebugInformation custom hook comes in. Created by [Your Name], this advanced hook provides developers with valuable insights into their components' behavior and helps identify performance bottlenecks or unexpected rendering patterns.
 
@@ -518,7 +544,7 @@ function ChildComponent(props) {
 
 <br />
 
-## 9. [`useDeepCompareEffect`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDeepCompareEffect/useDeepCompareEffect.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDeepCompareEffect/useDeepCompareEffect.js)
+## 9. [`useDeepCompareEffect`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useDeepCompareEffect/useDeepCompareEffect.js)
 
 ```javascript
 import { useEffect, useRef } from "react"
@@ -534,6 +560,8 @@ export default function useDeepCompareEffect(callback, dependencies) {
     useEffect(callback, [currentDependenciesRef.current])
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 Managing dependencies in React can be a challenge, especially when dealing with complex data structures or nested objects. That's where the useDeepCompareEffect custom hook comes in handy. Created to tackle the limitations of the default useEffect hook, useDeepCompareEffect ensures that the effect callback is only triggered when the dependencies have deeply changed, using lodash's isEqual function for accurate comparison.
 
@@ -588,7 +616,7 @@ export default function DeepCompareEffectComponent() {
 
 <br />
 
-## 10. [`useEffectOnce`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEffectOnce/useEffectOnce.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEffectOnce/useEffectOnce.js)
+## 10. [`useEffectOnce`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEffectOnce/useEffectOnce.js)
 
 ```javascript
 import { useEffect } from "react"
@@ -597,6 +625,8 @@ export default function useEffectOnce(cb) {
     useEffect(cb, [])
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useEffectOnce hook is designed to streamline the process of running effects only once when a component mounts. With just a few lines of code, you can eliminate the need to manually specify an empty dependency array ([]). Here's how it works:
 
@@ -628,7 +658,7 @@ This custom hook is incredibly versatile and can be utilized in various scenario
 
 <br />
 
-## 11. [`useEventListener`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEventListener/useEventListener.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEventListener/useEventListener.js)
+## 11. [`useEventListener`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEventListener/useEventListener.js)
 
 ```javascript
 import { useEffect, useRef } from "react"
@@ -654,6 +684,8 @@ export default function useEventListener(
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 One of the major advantages of useEventListener is its flexibility. You can specify the event type, callback function, and even the element where the event listener should be attached. This flexibility allows you to tailor event handling to your specific needs, enhancing the reusability of your code.
 
 The hook also takes advantage of the useRef hook to maintain a stable reference to the callback function. This ensures that the most up-to-date version of the callback is used, even if it changes during the component's lifecycle. This dynamic behavior enables you to handle events with precision and respond to changes in your application's state.
@@ -678,7 +710,7 @@ export default function EventListenerComponent() {
 
 <br />
 
-## 12. [`useFetch`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useFetch/useFetch.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useFetch/useFetch.js)
+## 12. [`useFetch`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useFetch/useFetch.js)
 
 ```javascript
 import useAsync from "../useAsync/useAsync"
@@ -696,6 +728,8 @@ export default function useFetch(url, options = {}, dependencies = []) {
     }, dependencies)
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 One of the key advantages of useFetch is its simplicity. By abstracting away the fetch logic into a reusable hook, developers can quickly and effortlessly make HTTP requests and handle responses without repetitive boilerplate code. With just a few lines, useFetch handles the network request, parses the JSON response, and provides the resulting data.
 
@@ -733,7 +767,7 @@ export default function FetchComponent() {
 
 <br />
 
-## 13. [`useGeolocation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useGeolocation/useGeolocation.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useGeolocation/useGeolocation.js)
+## 13. [`useGeolocation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useGeolocation/useGeolocation.js)
 
 ```javascript
 import { useState, useEffect } from "react"
@@ -770,6 +804,8 @@ export default function useGeolocation(options) {
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 The useGeolocation hook utilizes React's useState and useEffect hooks to manage the state of loading, errors, and geolocation data. It takes an optional "options" parameter to customize the geolocation behavior, allowing you to fine-tune the accuracy and other settings based on your specific needs.
 
 One of the key advantages of useGeolocation is its simplicity. By encapsulating the complex logic required for geolocation access and handling, this hook provides a clean and reusable solution. The hook automatically handles the loading state, updating it when geolocation data is being fetched, and sets the error state if any issues arise during the process.
@@ -804,7 +840,7 @@ export default function GeolocationComponent() {
 
 <br />
 
-## 14. [`useHover`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useHover/useHover.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useHover/useHover.js)
+## 14. [`useHover`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useHover/useHover.js)
 
 ```javascript
 import { useState } from "react"
@@ -819,6 +855,8 @@ export default function useHover(ref) {
     return hovered
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 This lightweight hook leverages the useState and [useEventListener](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useEventListener/useEventListener.js) hooks from React to keep track of the hover state. By simply passing a ref to the useHover hook, you can start receiving accurate hover events. The hook listens for "mouseover" and "mouseout" events, updating the hovered state accordingly.
 
@@ -854,7 +892,7 @@ export default function HoverComponent() {
 
 <br />
 
-## 15. [`useLongPress`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useLongPress.js/useLongPress.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useLongPress.js/useLongPress.js)
+## 15. [`useLongPress`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useLongPress.js/useLongPress.js)
 
 ```javascript
 import useEventListener from "../useEventListener/useEventListener"
@@ -873,6 +911,8 @@ export default function useLongPress(ref, cb, { delay = 250 } = {}) {
     useEventListener("touchend", clear, ref.current)
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 One of the key advantages of useLongPress is its simplicity. By utilizing this hook, developers can easily define a long-press action on any element in their React application. With just a few lines of code, the hook takes care of handling the intricacies of tracking the long-press duration and triggering the associated callback function.
 
@@ -906,7 +946,7 @@ export default function LongPressComponent() {
 
 <br />
 
-## 16. [`useMediaQuery`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useMediaQuery/useMediaQuery.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useMediaQuery/useMediaQuery.js)
+## 16. [`useMediaQuery`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useMediaQuery/useMediaQuery.js)
 
 ```javascript
 import { useState, useEffect } from "react"
@@ -928,6 +968,8 @@ export default function useMediaQuery(mediaQuery) {
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 The useMediaQuery hook allows you to dynamically update your UI based on a given media query. Simply pass in the desired media query as a parameter, and the hook will return a boolean value indicating whether the media query matches the current viewport size.
 
 One of the key advantages of this custom hook is its simplicity and reusability. With just a few lines of code, you can effortlessly implement responsive behavior throughout your application. Whether you need to conditionally render components, apply specific styles, or trigger different functionality based on screen size, useMediaQuery has got you covered.
@@ -946,7 +988,7 @@ export default function MediaQueryComponent() {
 
 <br />
 
-## 17. [`useOnlineStatus`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnlineStatus/useOnlineStatus.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnlineStatus/useOnlineStatus.js)
+## 17. [`useOnlineStatus`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnlineStatus/useOnlineStatus.js)
 
 ```javascript
 import { useState } from "react"
@@ -961,6 +1003,8 @@ export default function useOnlineStatus() {
     return online
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 One of the main advantages of "useOnlineStatus" is its simplicity. By importing and using this hook in your component, you can effortlessly access the online status of the user. The hook internally uses the "navigator.onLine" property to determine the initial online status and dynamically updates it whenever the user's connectivity changes.
 
@@ -980,7 +1024,7 @@ export default function OnlineStatusComponent() {
 
 <br />
 
-## 18. [`useOnScreen`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnScreen/useOnScreen.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnScreen/useOnScreen.js)
+## 18. [`useOnScreen`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useOnScreen/useOnScreen.js)
 
 ```javascript
 import { useEffect, useState } from "react"
@@ -1004,6 +1048,8 @@ export default function useOnScreen(ref, rootMargin = "0px") {
     return isVisible
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useOnScreen hook leverages the power of the Intersection Observer API, making it efficient and reliable. By simply providing a ref to the element you want to monitor, useOnScreen will notify you when it enters or exits the viewport.
 
@@ -1038,7 +1084,7 @@ export default function OnScreenComponentComponent() {
 
 <br />
 
-## 19. [`usePrevious`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/usePrevious/usePrevious.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/usePrevious/usePrevious.js)
+## 19. [`usePrevious`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/usePrevious/usePrevious.js)
 
 ```javascript
 import { useRef } from "react"
@@ -1055,6 +1101,8 @@ export default function usePrevious(value) {
     return previousRef.current
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The advantages of using usePrevious are remarkable. By using useRef, this hook efficiently stores the current and previous values, updating them whenever the value changes. By comparing the current and previous values, you can easily detect and respond to changes in your component's data.
 
@@ -1088,7 +1136,7 @@ export default function PreviousComponent() {
 
 <br />
 
-## 20. [`useRenderCount`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useRenderCount/useRenderCount.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useRenderCount/useRenderCount.js)
+## 20. [`useRenderCount`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useRenderCount/useRenderCount.js)
 
 ```javascript
 import { useEffect, useRef } from "react"
@@ -1099,6 +1147,8 @@ export default function useRenderCount() {
     return count.current
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useRenderCount hook utilizes React's useEffect and useRef hooks to keep a count of renders. With each render, the count is incremented, providing you with real-time feedback on the component's render frequency.
 
@@ -1129,7 +1179,7 @@ export default function RenderCountComponent() {
 
 <br />
 
-## 21. [`useScript`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useScript/useScript.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useScript/useScript.js)
+## 21. [`useScript`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useScript/useScript.js)
 
 ```javascript
 import useAsync from "../useAsync/useAsync"
@@ -1148,6 +1198,8 @@ export default function useScript(url) {
     }, [url])
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 One of the significant advantages of useScript is its ability to handle script loading asynchronously. By setting the script's async attribute to true, you ensure that it won't block the rendering of your application. This improves the performance and overall user experience, especially when dealing with larger scripts or slow network connections.
 
@@ -1171,7 +1223,7 @@ export default function ScriptComponent() {
 
 <br />
 
-## 22. [`useStateWithHistory`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithHistory/useStateWithHistory.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithHistory/useStateWithHistory.js)
+## 22. [`useStateWithHistory`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithHistory/useStateWithHistory.js)
 
 ```javascript
 import { useCallback, useRef, useState } from "react"
@@ -1235,6 +1287,8 @@ export default function useStateWithHistory(
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 Advantages of useStateWithHistory:
 
 1. Automatic history tracking: useStateWithHistory automatically keeps track of the values you set, allowing you to access the complete history whenever you need it.
@@ -1279,7 +1333,7 @@ export default function StateWithHistoryComponent() {
 
 <br />
 
-## 23. [`useStateWithValidation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithValidation/useStateWithValidation.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithValidation/useStateWithValidation.js)
+## 23. [`useStateWithValidation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStateWithValidation/useStateWithValidation.js)
 
 ```javascript
 import { useState, useCallback } from "react"
@@ -1301,6 +1355,8 @@ export default function useStateWithValidation(validationFunc, initialValue) {
     return [state, onChange, isValid]
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useStateWithValidation hook combines the useState and useCallback hooks from React to provide an elegant solution. It takes two parameters: a validation function and an initial value. The validation function determines whether the current state is considered valid or not.
 
@@ -1332,7 +1388,7 @@ In this example, the StateWithValidationComponent uses the useStateWithValidatio
 
 <br />
 
-## 24. [`useStorage`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStorage/useStorage.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStorage/useStorage.js)
+## 24. [`useStorage`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useStorage/useStorage.js)
 
 ```javascript
 import { useCallback, useState, useEffect } from "react"
@@ -1370,6 +1426,8 @@ function useStorage(key, defaultValue, storageObject) {
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 The useStorage hook provides two convenient functions: useLocalStorage and useSessionStorage. With useLocalStorage, you can effortlessly store and retrieve data in the browser's local storage, while useSessionStorage offers the same functionality but with the session storage instead.
 
 One of the key advantages of this custom hook is its simplicity. You can use it to store any type of data, such as strings, numbers, or even complex objects, with just a few lines of code. Additionally, useStorage handles the serialization and deserialization of data for you, so you don't have to worry about converting values to and from JSON.
@@ -1403,7 +1461,7 @@ export default function StorageComponent() {
 
 <br />
 
-## 25. [`useTimeout`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTimeout/useTimeout.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTimeout/useTimeout.js)
+## 25. [`useTimeout`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTimeout/useTimeout.js)
 
 ```javascript
 import { useCallback, useEffect, useRef } from "react"
@@ -1438,6 +1496,8 @@ export default function useTimeout(callback, delay) {
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 The "useTimeout" hook encapsulates the logic for setting, clearing, and resetting timeouts within a React component. It takes two parameters: a callback function and a delay duration in milliseconds. Whenever the specified delay elapses, the provided callback function is executed.
 
 One of the significant advantages of this custom hook is that it ensures the callback function remains up to date even if it changes during component re-renders. By using a useRef to store the callback reference, the hook guarantees that the latest version of the function is always called.
@@ -1467,7 +1527,7 @@ export default function TimeoutComponent() {
 
 <br />
 
-## 26. [`useToggle`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useToggle/useToggle.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useToggle/useToggle.js)
+## 26. [`useToggle`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useToggle/useToggle.js)
 
 ```javascript
 import { useState } from "react"
@@ -1484,6 +1544,8 @@ export default function useToggle(defaultValue) {
     return [value, toggleValue]
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 One of the main advantages of useToggle is its flexibility. With a single line of code, you can initialize the state with a default value. The toggleValue function allows you to easily toggle the state between true and false, or you can pass a boolean value directly to set the state to your desired value. This versatility makes useToggle ideal for a wide range of scenarios where toggling or switching state is required.
 
@@ -1508,7 +1570,7 @@ export default function ToggleComponent() {
 
 <br />
 
-## 27. [`useTranslation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTranslation/useTranslation.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTranslation/useTranslation.js)
+## 27. [`useTranslation`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useTranslation/useTranslation.js)
 
 ```javascript
 import { useLocalStorage } from "../useStorage/useStorage"
@@ -1547,6 +1609,8 @@ function getNestedTranslation(language, keys) {
 }
 ```
 
+[🔝 Back to table of contents](#table-of-contents)
+
 One of the key advantages of useTranslation is its seamless integration with the browser's localStorage. It automatically saves the selected language and fallback language preferences, so your users will see the content in their preferred language every time they visit your app.
 
 The hook utilizes the useLocalStorage hook from the useStorage library to persist the language settings. This ensures that even if the user refreshes the page or navigates away and comes back, their language preference will be preserved.
@@ -1577,7 +1641,7 @@ export default function TranslationComponent() {
 
 <br />
 
-## 28. [`useUpdateEffect`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useUpdateEffect/useUpdateEffect.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useUpdateEffect/useUpdateEffect.js)
+## 28. [`useUpdateEffect`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useUpdateEffect/useUpdateEffect.js)
 
 ```javascript
 import { useEffect, useRef } from "react"
@@ -1594,6 +1658,8 @@ export default function useUpdateEffect(callback, dependencies) {
     }, dependencies)
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 The useUpdateEffect hook is designed to execute a callback function only after the initial render. This behavior is particularly useful when you want to perform actions based on state changes while skipping the initial execution. By leveraging the useRef hook, useUpdateEffect tracks the first render and skips the callback during that phase.
 
@@ -1622,7 +1688,7 @@ export default function UpdateEffectComponent() {
 
 <br />
 
-## 29. [`useWindowSize`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useWindowSize/useWindowSize.js) | [`sources`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useWindowSize/useWindowSize.js)
+## 29. [`useWindowSize`](https://github.com/sergeyleschev/react-custom-hooks/blob/main/src/hooks/useWindowSize/useWindowSize.js)
 
 ```javascript
 import { useState } from "react"
@@ -1641,6 +1707,8 @@ export default function useWindowSize() {
     return windowSize
 }
 ```
+
+[🔝 Back to table of contents](#table-of-contents)
 
 One of the main advantages of useWindowSize is its ease of use. By simply importing the hook and invoking it within your functional component, you gain access to an object containing the current width and height of the window. This eliminates the need for boilerplate code and allows you to focus on building dynamic and responsive interfaces.
 
