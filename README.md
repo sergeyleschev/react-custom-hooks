@@ -12,8 +12,6 @@ React Custom Hooks @ 2023, S. Leschev. Google Engineering Level: L6+
 
 # Table of Contents
 - [S.Leschev: React Custom Hooks](#sleschev-react-custom-hooks)
-    - [Supercharge Your Projects with My Custom Hooks](#supercharge-your-projects-with-my-custom-hooks)
-- [Table of Contents](#table-of-contents)
   - [1. `useArray`](#1-usearray)
   - [2. `useAsync`](#2-useasync)
   - [3. `useClickOutside`](#3-useclickoutside)
